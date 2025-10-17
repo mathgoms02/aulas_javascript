@@ -2,7 +2,7 @@ let nome = 'Matheus'
 // var nome1 = 'João' # vamos utilizar o let, mas o conceito é o mesmo
 
 let outro_nome;
-outro_nome = 'Pedro??'
+outro_nome = 'Pedro'
 console.log(outro_nome);
 
 console.log(nome, 'nasceu em 1984.');
