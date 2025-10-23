@@ -8,6 +8,7 @@ while (i<=10) {
     i++;
 }
 
+console.log("######");
 //________________________________________________________________________________________________________________________
 
 const nome = 'Matheus';
@@ -19,6 +20,7 @@ while (i < nome.length) {
 }
 
 
+console.log("######");
 //________________________________________________________________________________________________________________________
 
 function random(min, max) {
@@ -32,12 +34,12 @@ let rand = random(min, max);
 
 // Cada vez que gerar o numero aleatório, quero saber quando ele for 10
 
-// while (rand !== 10) {
-//     rand = random(min, max);
-//     console.log(rand);
-// }
+while (rand !== 10) {
+    rand = random(min, max);
+    console.log(rand);
+}
 
-
+console.log("######");
 //________________________________________________________________________________________________________________________
 
 // Vamos ver do while. A diferença entre os dois, é que o While ele checa a condição e executar o laço
