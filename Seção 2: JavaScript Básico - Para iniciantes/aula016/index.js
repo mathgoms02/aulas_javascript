@@ -29,10 +29,9 @@ console.log(alunos.length)
 // console.log(alunos)
 
 
-// Removendo item do fim
+// // Removendo item do fim
 // const removido = alunos.pop();   // podemos adicionar o valor removido a uma variavel
 // console.log(removido);
-// const removido = alunos.pop();
 // console.log(alunos);
 
 
@@ -42,7 +41,7 @@ console.log(alunos.length)
 // console.log(alunos);
 
 
-// removendo a partir do indice
+// // removendo a partir do indice
 // delete alunos[1];   // vai ficar com valor empty
 // console.log(alunos);
 // console.log(alunos[50]); // Isso não gera erro, vai voltar um undefined
@@ -51,9 +50,9 @@ console.log(alunos.length)
 // // repartindo o array
 // alunos.push('Luana');
 // alunos.push('Eduardo');
-// console.log(alunos.slice(0, 3));
+// console.log("REPARTIDO: ", alunos.slice(0, 3));
 
-// Verificando tipagem
+// // Verificando tipagem
 // console.log(typeof alunos); // vai retornar object, e não array
 // console.log(alunos instanceof Array);   // assim, vai retornar como True, pq é um array
 // alunos = 123;

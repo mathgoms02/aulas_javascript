@@ -57,6 +57,9 @@ form button:hover {
     background: var(--primary-color-darker);
 }
 
+ul {
+    width: 100%;
+}
 /* PARA MUDAR DE COR QUANDO CLICAR */
 /* form button:active {
     background: #fff;

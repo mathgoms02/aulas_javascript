@@ -1,9 +1,9 @@
-// function saudacao(nome){
-//     return `Bom dia, ${nome}!`;
-// }
+function saudacao(nome){
+    return `Bom dia, ${nome}!`;
+}
 
-// const variavel = saudacao('Matheus');
-// console.log(variavel);
+const variavel = saudacao('Matheus');
+console.log(variavel);
 
 //_____________________________________________________________________________________________________________
 
