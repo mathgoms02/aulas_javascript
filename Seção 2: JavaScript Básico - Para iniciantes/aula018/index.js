@@ -25,20 +25,20 @@
 
 // // ainda sim, vamos precisar ter muito trabalho, então o certo é fazer uma função. E criaremos uma fabrica de pessoas 
 // function criaPesosa (nome, sobrenome, idade){
-    //     return {
-        //         nome: nome,
-        //         sobrenome: sobrenome,
-        //         idade: idade
-        //     };
-        // }
+//     return {
+//         nome: nome,
+//         sobrenome: sobrenome,
+//         idade: idade
+//     };
+// }
         
-        // const pessoa1 = criaPesosa('Matheus', 'Gomes', 22);
-        // const pessoa2 = criaPesosa('Maria', 'Helena', 5);
-        // const pessoa3 = criaPesosa('Roberto', 'Ribeiro', 12);
-        // const pessoa4 = criaPesosa('Thiago', 'SIlva', 42);
-        // const pessoa5 = criaPesosa('João', 'Brito', 34);
-        
-        // console.log(pessoa1.idade);
+// const pessoa1 = criaPesosa('Matheus', 'Gomes', 22);
+// const pessoa2 = criaPesosa('Maria', 'Helena', 5);
+// const pessoa3 = criaPesosa('Roberto', 'Ribeiro', 12);
+// const pessoa4 = criaPesosa('Thiago', 'SIlva', 42);
+// const pessoa5 = criaPesosa('João', 'Brito', 34);
+
+// console.log(pessoa1.idade);
 
 //_____________________________________________________________________________________________________________
 
@@ -59,12 +59,12 @@ const pessoa1 = {
     }
 };
 
-pessoa1.fala();
-pessoa1.incrementaIdade();
-pessoa1.fala();
-pessoa1.incrementaIdade();
-pessoa1.fala();
-pessoa1.incrementaIdade();
-pessoa1.fala();
-pessoa1.incrementaIdade();
-pessoa1.fala();
+pessoa1.fala();                 // Matheus Gomes está falando oi...
+pessoa1.incrementaIdade();      // Minha idade atual é:22
+pessoa1.fala();                 // Matheus Gomes está falando oi...  
+pessoa1.incrementaIdade();      // Minha idade atual é:23
+pessoa1.fala();                 // Matheus Gomes está falando oi...
+pessoa1.incrementaIdade();      // Minha idade atual é:24
+pessoa1.fala();                 // Matheus Gomes está falando oi...
+pessoa1.incrementaIdade();      // Minha idade atual é:25
+pessoa1.fala();                 // Matheus Gomes está falando oi...

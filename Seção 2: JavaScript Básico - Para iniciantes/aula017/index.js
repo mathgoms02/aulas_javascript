@@ -18,20 +18,20 @@ console.log(variavel);
 
 //_____________________________________________________________________________________________________________
 
-// // função anonima
-// const raiz = function(n) {
-//     return n ** 0.5;
-// };
-
-// console.log(raiz(9));
-// console.log(raiz(16));
-// console.log(raiz(25));
-
-//_____________________________________________________________________________________________________________
-
-// Arrow Function
-const raiz = n => n ** 0.5;
+// função anonima
+const raiz = function(n) {
+    return n ** 0.5;
+};
 
 console.log(raiz(9));
 console.log(raiz(16));
 console.log(raiz(25));
+
+//_____________________________________________________________________________________________________________
+
+// Arrow Function
+const raiz_1 = n => n ** 0.5;
+
+console.log(raiz_1(9));
+console.log(raiz_1(16));
+console.log(raiz_1(25));

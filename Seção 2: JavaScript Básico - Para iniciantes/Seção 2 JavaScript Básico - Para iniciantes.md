@@ -498,4 +498,218 @@ console.log(alunos instanceof Array); // testando não sendo um array
 
 ## Aula 17 - Funções em JavaScript
 
-…
+Criar funções em JavaScript é tranquilo, para a forma convecional utilizamos um formato assim: 
+
+```jsx
+function saudacao(nome){
+    return `Bom dia, ${nome}!`;
+}
+
+const variavel = saudacao('Matheus');
+console.log(variavel);
+```
+
+Temos a opção de criar uma função anonima, que seria uma função criada dentro de algo, tipo uma variavel ou um evento de botão, criar uma função anonima. 
+
+```jsx
+// função anonima
+const raiz = function(n) {
+    return n ** 0.5;
+};
+
+console.log(raiz(9));
+```
+
+E também, temos a arrom function, eu não entendi muito bem, mas acho que vou ver isso mais vezes. 
+
+```jsx
+// Arrow Function
+const raiz_1 = n => n ** 0.5;
+
+console.log(raiz_1(9));
+console.log(raiz_1(16));
+console.log(raiz_1(25));
+```
+
+---
+
+## Aula 18 - Objetos básicos
+
+Aqui, criamos objetos com aquele sentido mesmo de dicionários em python 
+
+```jsx
+// forma certa de criar OBJETOS. Obs: usamos as {} para os objetos.
+const pessoa1 = {
+        nome: 'Matheus',
+        sobrenome: 'Gomes',
+        idade: 22
+    };
+    
+    console.log(pessoa1.nome);
+    console.log(pessoa1.sobrenome);
+```
+
+Podemos criar funções dentro desses objetos. Ai podemos chamar a função pelo objeto, com aquele mesmo raciocinio de POO: 
+
+```jsx
+const pessoa1 = {
+    nome: 'Matheus',
+    sobrenome: 'Gomes',
+    idade: 22,
+
+    // criando função dentro para a pessoa falar suas info (Não precisa da palavra function aqui dentro)
+    fala () {
+        console.log(`${this.nome} ${this.sobrenome} está falando oi...`);
+        console.log(`Minha idade atual é:${this.idade}`)
+    },
+
+    //Cada vez que chamar esse método, irá acrescentar uma idade 
+    incrementaIdade() {
+        this.idade++;
+    }
+};
+
+pessoa1.fala();                 // Matheus Gomes está falando oi...
+pessoa1.incrementaIdade();      // Minha idade atual é:22
+pessoa1.fala();                 // Matheus Gomes está falando oi...  
+pessoa1.incrementaIdade();      // Minha idade atual é:23
+```
+
+---
+
+## Aula 19 - Valores primitivos e valores por referência
+
+Como valores primitivos temos:
+
+VALORES PRIMITIVOS - Valores copiados
+
+- String
+- Number
+- Boolen
+- Undefined
+- NULL (bigint, symbol)
+
+Referência (mutável) - passados por referência
+
+- Array
+- object
+- function
+
+Copiando, ele sempre vai apontar pro lugar na memória, então independente, se eu mudar o 'b', ele vai mudar 'a' e vice versa 
+
+```jsx
+let a = [1,2,3];
+let b = a;
+console.log(a,b);
+
+a.push(4);
+console.log(a,b);
+b.pop();
+console.log(a,b);
+```
+
+Mas podemos deixar ele independente 
+
+```jsx
+let a = [1,2,3];
+let b = [...a]; // valor independente
+let c = b;
+console.log(a,b);
+
+a.push(4);
+console.log(a,b);
+b.pop();
+console.log(a,b);
+```
+
+---
+
+## Aula 20 - Função, array e objeto
+
+Aqui começamos a ver o Fullstack, onde precisamos de um html para começar os exercicios. Agora algumas observações.
+
+Para a maioria das interações entre o JS e o HTML, utilizamos o document, ele referencia o corpo todo do HTML, o objeto HTML.
+
+Se temos uma tag html, um forms por exemplo, com uma classe ‘forms’, chamamos no JavaScript utilizando querySelector() e como parametro a classe ou id: 
+
+```html
+<form class="form" id="form" action="" method="get"></form>
+```
+
+```jsx
+const form = document.querySelector('.form'); // Para classes
+const form = document.querySelector('#form'); // Para IDs
+```
+
+E assim, podemos criar eventos para o form criado, pq agora temos ele numa variavel, então para o submit teremos: 
+
+```jsx
+//recebeEventoForm seria a função responsável pelo envio do forms
+form.addEventListener('submit', recebeEventoForm);
+```
+
+E no caso de queremos adicionar algum valor na tela? Utilizamos o innerHTML. Com ele, podemos utilizar texto e tags html, se for apenas texto, podemos utilizar o innerText, que vamos ver mais para frente. Então se eu tenho uma `div` resultado, vou pegar essa div utilizando o querySelector, e vou atribuir no innerHTML o valor que eu quero:
+
+```html
+<div class="resultado"></div>
+```
+
+```jsx
+const resultado = document.querySelector('.resultado');
+resultado.innerHTML += `<p>${nome.value} ${peso.value} ${altura.value}</p>`;
+```
+
+Nesse caso, utilizei o `+=` então, ele vai adicionar vários `<p>`, mas se eu quiser substituir, é só utilizar o simbolo de atribuição mesmo.
+
+- **código completo**
+    
+    ```html
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercícios</title>
+    </head>
+    <body>
+        <form class="form" action="" method="get">
+            <p>Nome: <input type="text" class="nome"></p>
+            <p>Sobrenome: <input type="text" class="sobrenome"></p>
+            <p>Idade: <input type="text" class="idade"></p>
+            <p>Peso: <input type="text" class="peso"></p>
+            <p>Altura: <input type="text" class="altura"></p>
+            <button>Enviar!</button>
+        </form>
+        <div class="resultado"></div>
+        <script src="js/script.js"></script>
+    </body>
+    </html>
+    ```
+    
+    ```
+    function meuEscopo () {
+        const form = document.querySelector('.form');
+        const resultado = document.querySelector('.resultado');
+        const pessoas = [];
+    
+        function recebeEventoForm(evento) {
+            evento.preventDefault();
+    
+            const nome = form.querySelector('.nome');
+            const sobrenome = form.querySelector('.sobrenome');
+            const peso = form.querySelector('.peso');
+            const altura = form.querySelector('.altura');
+    
+            pessoas.push({
+                nome: nome.value,
+                sobrenome: sobrenome.value,
+                peso: peso.value,
+                altura: altura.value
+            });
+            console.log(pessoas);
+            resultado.innerHTML += `<p>${nome.value} ${peso.value} ${altura.value}</p>`;
+        }
+        form.addEventListener('submit', recebeEventoForm);
+    }
+    meuEscopo();
+    ```
